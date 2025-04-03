@@ -1,0 +1,19 @@
+<p>book workskkk!</p>
+<table border="10">
+    <tr>
+      <th>BookId</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>View</th>
+        <th>Delete</th>
+    </tr>
+<tr *ngFor="let bk of books">
+  <td> {{bk.bookId}}</td>
+  <td> {{bk.title}}</td>
+  <td> {{bk.author}} </td>
+  <td> {{bk.genre}} </td>
+  <td><button type="button" (click)="viewBook(bk.bookId)">View</button>
+  <td><button type="button" (click)="deleteBook(bk.bookId)">Delete</button>
+</tr>
+</table>

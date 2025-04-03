@@ -1,0 +1,27 @@
+<p>Student-List</p>
+<table Border = "5">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+        <th>Grade Remarks</th>
+    </tr>
+ 
+    <tr *ngFor = "let details of stud">
+        <td>{{details.id}}</td>
+        <td>{{details.name}}</td>
+        <td>{{details.age}}</td>
+        <td [ngStyle]="{
+            'color': details.grade === 'A+' ? 'green' : details.grade === 'A' ? 'blue' : details.grade === 'B' ? 'orange' : 'red',
+            'font-weight': details.grade === 'A+' ? 'bold' : 'normal'
+        }">{{details.grade}}</td>
+        <!-- <td>{{details.grade}}</td> -->
+        <td [ngSwitch]="details.grade">
+            <span *ngSwitchCase="'A+'">Excellent</span>
+            <span *ngSwitchCase="'A'">Very Good</span>
+            <span *ngSwitchCase="'B'">Good</span>
+            <span *ngSwitchDefault>Needs Improvement</span>
+        </td>
+    </tr>
+</table>
