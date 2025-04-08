@@ -12,7 +12,10 @@ export class BookService {
 
   private url:string='https://localhost:7061/api/Books';
 
- 
+  addBook(bookinfo:IBook):Observable<IBook>{
+    return this.Http.post<IBook>(this.url,bookinfo);
+  }
+
   getBooks():Observable<IBook[]>{
     return this.Http.get<IBook[]>(this.url);
   }

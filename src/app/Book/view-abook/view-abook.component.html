@@ -1,6 +1,18 @@
 <div class="container">
- <div class="card">
-    
- </div>
+   <div class="card">
+      <h2>View Books</h2>
+      <div class="card-header bg-success text-white">
+        <h1>Book Information</h1>
+      </div>
+      <div class="card-body">
+        <p>BookId : {{fetchedBook.bookId}}</p> 
+        <p>Title  :{{fetchedBook.title}}</p>
+        <p>Author :{{fetchedBook.author}}</p>
+        <p>ISBN   :{{fetchedBook.iSBN}}</p>
+      </div>
+      <div class="card-footer bg-success text-white">
+        <button type="button" (click)="back()">Back </button>
+    </div>
+   </div>
 
 </div>

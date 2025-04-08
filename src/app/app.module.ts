@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentService } from './services/student.service';
 import { BookComponent } from './Book/book/book.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { AddbookComponent } from './Book/addbook/addbook.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { HeaderComponent } from './header/header.component';
     StudentListComponent,
     StudentGradeComponent,
     BookComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddbookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]

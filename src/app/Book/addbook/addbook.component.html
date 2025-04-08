@@ -1,0 +1,82 @@
+<div class="container">
+    <form #myform="ngForm" (ngSubmit)="addBook(myform)">
+   
+      <div class="card">
+         <h2>Add Books</h2>
+         <div class="card-header bg-warning text-white">
+           <h1>Add Book Information</h1>
+         </div> 
+         <div class="card-body">
+           <div class="form-group">
+              <label for="BookId" class="form-label">Book Id</label>
+              <input
+                 type="text"
+                 id="BookId"
+                 name="BookId"
+                 ngModel
+                 #BookId="ngModel"
+                 required
+                 class="form-control"/>
+                 <label for="title" class="form-label">title</label>
+                 <input
+                 type="text"
+                 id="title"
+                 name="title"
+                 #title="ngModel"
+                 ngModel
+                 required/>
+
+                 <label for="author" class="form-label">Author</label>
+<input
+  type="text"
+  id="author"
+  name="author"
+  #author="ngModel"
+  ngModel
+  required
+/>
+
+<label for="genre" class="form-label">Genre</label>
+<input
+  type="text"
+  id="genre"
+  name="genre"
+  #genre="ngModel"
+  ngModel
+  required
+/>
+
+<label for="iSBN" class="form-label">ISBN</label>
+<input
+  type="text"
+  id="iSBN"
+  name="iSBN"
+  #iSBN="ngModel"
+  ngModel
+  required
+/>
+
+<label for="yearPulished" class="form-label">Year Published</label>
+<input
+  type="number"
+  id="yearPulished"
+  name="yearPulished"
+  #yearpulished="ngModel"
+  ngModel
+  required
+/>
+
+<label for="available" class="form-label">Available</label>
+<select id="available" name="available" #avalaible="ngModel" ngModel required>
+  <option [ngValue]="true">Yes</option>
+  <option [ngValue]="false">No</option>
+</select>
+           </div>
+         </div>
+         <div class="card-footer bg-warning text-white">
+          <button type="submit" class="btn btn-primary" [disabled]="myform.invalid" >Add Book</button>
+           <button type="button" (click)="back()">Back </button>
+       </div>
+      </div>
+      </form>
+   </div>

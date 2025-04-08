@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { IBook } from '../Book.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -11,7 +12,7 @@ export class BookComponent implements OnInit{
    public books:IBook[]=[];
 
    
-   constructor(private bookService:BookService){}
+   constructor(private bookService:BookService,private router:Router){}
 
    ngOnInit(): void {
      this.loaddata();   
@@ -31,7 +32,9 @@ loaddata(){
 })
 }
 
-viewBook(bookId:number){}
+viewBook(bookId:number){
+  this.router.navigate(['view-abook',bookId])
+}
 
 
 deleteBook(bookid:number){

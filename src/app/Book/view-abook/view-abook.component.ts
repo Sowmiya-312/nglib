@@ -23,20 +23,23 @@ export class ViewABookComponent implements OnInit{
   private activatedRoute:ActivatedRoute,
   private router:Router){}
 
+  
+  back(){
+    this.router.navigate(['book-list']);
+   }      
 
   ngOnInit(): void {
-    let bookId=this.activatedRoute.snapshot.paramMap.get('bookid');
+    let bookId =this.activatedRoute.snapshot.paramMap.get('bookid');
     if(bookId!=null){
       this.bookService.getABook(+bookId).subscribe({
         next:(response)=>{
-          this.fetchedBook=response},
+          this.fetchedBook=response;
+        },
         error:(err)=>console.log(err)
         
       })
     }
   }
   
-             back(){
-              this.router.navigate(['book-list']);
-             }            
+                
 }
